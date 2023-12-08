@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planète ASCII</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        pre {
+        }
+
+        span {
+            transition: 200ms;
+            cursor: pointer;
+        }
+
+        span:hover {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: green;
+            transition: 200ms;
+        }
+
+        #definitions {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .definition {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            display: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+              _-o#&&*''''?d:>b\_
+          _o/"`''  '',, dMF9MMMMMHo_
+       .o&#'        `"MbHMMM<span id="eco">ECO</span>MMMMMHo.
+     .o"" '         vodM*$&&HMMMMMMMMMM?.
+    ,'              $M&ood,~'`&##MMMMMMH\
+   /               ,MMMMMMM#b?#bobMMMMHMMML
+  &              ?MMMMMMMMMMMMMMMMM7MMM$R*Hk
+ ?$.            :MMM<span id="propre">PROPRE</span>MMMMMMMMMM/HMMM|`*L
+|               |MMMMMMMMMMMMMMMMMMMMbMH'    T,
+$H#:            `*MMMMMMMMMMMMMMMMMMMMb#'  `?
+]MMH#             ""*""""*#MMMMMMMMMMMMM'    -
+MMMMMb_                   |MMMMMMMMMMMP'     :
+HMMMMMMMHo                 `MMMMMMMMMT       .
+?MMMMMMMMP                  9MMMMMMMM       -
+-?MMMMMMM                  |MM<span id="lutte">LUTTE</span>MM?,d-    '
+ :|MMMMMM-                 `MMMMMMMT .M|.   :
+  .9MMM[                    &MMMMM*' `'    .
+   :9MMk                    `MMM#"        -
+     &M                      `          .-
+      `&.                             .
+        `~,   .                     ./
+            . _                  .-
+              '`--._,dd###pp=""'
+    </pre>
+
+    <div id="definitions">
+        <div id="eco-definition" class="definition">Écologie : La science qui étudie les interactions entre les organismes vivants et leur environnement, ainsi que les relations entre ces organismes.</div>
+        <div id="propre-definition" class="definition">Propre : Qui est exempt de saleté, de pollution ou de toute substance indésirable ; respectueux de l'environnement.</div>
+        <div id="lutte-definition" class="definition">Lutte : Un effort actif pour résister à quelque chose ou pour combattre en faveur d'un objectif particulier, souvent associé à la préservation de l'environnement.</div>
+    </div>
+
+    <footer>
+        Projet fait par l'équipe Ana D. Armas
+    </footer>
+
+    <script>
+        // Ajoutez un gestionnaire d'événements pour chaque mot cliquable
+        document.getElementById('eco').addEventListener('click', function() {
+            showDefinition('eco-definition');
+        });
+
+        document.getElementById('propre').addEventListener('click', function() {
+            showDefinition('propre-definition');
+        });
+
+        document.getElementById('lutte').addEventListener('click', function() {
+            showDefinition('lutte-definition');
+        });
+
+        // Fonction pour afficher la définition
+        function showDefinition(id) {
+            // Cache toutes les définitions
+            var definitions = document.getElementsByClassName('definition');
+            for (var i = 0; i < definitions.length; i++) {
+                definitions[i].style.display = 'none';
+            }
+
+            // Affiche la définition correspondante
+            var definition = document.getElementById(id);
+            if (definition) {
+                definition.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
